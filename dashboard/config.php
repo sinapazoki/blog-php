@@ -1,8 +1,11 @@
 <?php
-	// $dbServer = 'localhost';
-	// $dbUsername = 'root';
-	// $dbPassword = '';
-	// $dbDatabase = 'blog';
+	$dbServer = 'localhost';
+	$dbUsername = 'root';
+	$dbPassword = '';
+	$dbDatabase = 'sina-blog';
+
+	// sync admin whatsaoo link here
+	$whatsapp = 'https://wa.link/t9dz9g';
 
 	$adminConfig = array(
 		'adminUsername' => "admin",

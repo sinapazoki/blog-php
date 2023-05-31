@@ -212,6 +212,16 @@ function getdetaileddescription($table){
 
 	mysqli_close($con);
 }
+
+function getwhatsapp()
+{
+	require("dashboard/config.php");
+	echo $whatsapp;
+	
+}
+
+
+
 function countcategories(){
 	require("database/db_connect.php");
 	$sql="SELECT * FROM blog_categories LIMIT 10";

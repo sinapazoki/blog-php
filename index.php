@@ -28,8 +28,16 @@
 </head>
 
 <body>
-	<?php include("header.php");?>
-	<?php include("banner.php");?>
+
+<?php include("header.php");?>
+	<?php include("banner.php");
+	?>
+
+
+<a href="<?php  getwhatsapp()  ?>" class="float" target="_blank">
+<span><img src="./images/whatsapp.png" alt=""></span>
+</a>
+
 
 	<!--/main-->
 	<section class="main-content-w3layouts-agileits">

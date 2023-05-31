@@ -85,10 +85,10 @@
 
 
 		$default_config = array(
-			'dbServer' => 'localhost',
-			'dbUsername' => 'root',
+			'dbServer' => '',
+			'dbUsername' => '',
 			'dbPassword' => '',
-			'dbDatabase' => 'blog',
+			'dbDatabase' => '',
 
 			'adminConfig' => array(
 				'adminUsername' => '',
