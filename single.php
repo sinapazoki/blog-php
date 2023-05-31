@@ -10,6 +10,9 @@ $row = mysqli_fetch_assoc($result);
 $query2="SELECT * from membership_users where memberID='".$row['author']."'"; $result2=mysqli_query($GLOBALS["___mysqli_ston"],$query2) or die ( ((is_object($GLOBALS["___mysqli_ston"]))? mysqli_error($GLOBALS["___mysqli_ston"]) : (($___mysqli_res = mysqli_connect_error()) ?$___mysqli_res : true)));
 $user = mysqli_fetch_assoc($result2);
 
+// count blog view
+$view=$_REQUEST['id']; $query="UPDATE blogs SET view = view + 1 where id='".$id."'"; $result=mysqli_query($GLOBALS["___mysqli_ston"],$query) or die ( ((is_object($GLOBALS["___mysqli_ston"]))? mysqli_error($GLOBALS["___mysqli_ston"]) : (($___mysqli_res = mysqli_connect_error()) ?$___mysqli_res : true))); 
+
 ?>
 <!DOCTYPE html>
 <html dir="rtl" lang=" AF">
@@ -92,7 +95,7 @@ $user = mysqli_fetch_assoc($result2);
 								<ul>
 									<li>
 										<a href="#">
-											<i class="far fa-calendar-alt"></i>
+											<i class="far fa-calendar-alt mx-1"></i>
 											<?php
 											//  echo $row['date']; 
 											$y =  substr($row['date'], 0, 4);
@@ -103,16 +106,21 @@ $user = mysqli_fetch_assoc($result2);
 											 ?></a>
 										</li>
 										<li class="mx-2">
-											<a href="#">
-												<i class="far fa-user"></i><?php echo $row['author']; ?></a>
+											<a class=" m-1" href="#">
+												<i class="far fa-user mx-1"></i><?php echo $row['author']; ?></a>
 											</li>
 											<li>
-												<a href="#" class="d-flex align-items-center">
-												<i class="far fa-clock"></i>
+												<a href="#" class="d-flex align-items-center  m-1">
+												<i class="far fa-clock mx-1"></i>
 												<?php echo $row['time']; ?>
-												<span>دقیقه</span></a>
+												<span class="mr-1">دقیقه</span></a>
 												</li>
-
+												<li>
+												<a href="#" class="d-flex align-items-center m-1 ">
+												<i class="far fa-bookmark mx-1"></i>
+												<?php echo $row['view']; ?>
+												<span class="mr-1">بازدید</span></a>
+												</li>
 
 												</ul>
 											</div>
