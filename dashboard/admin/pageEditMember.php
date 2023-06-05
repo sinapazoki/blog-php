@@ -97,7 +97,7 @@ if(isset($_POST['saveChanges'])){
 		if($superadmin){
 			$admin_pass_md5 = makeSafe($adminConfig['adminPassword'], false);
 			$admin_email = makeSafe($adminConfig['senderEmail'], false);
-			$non_superadmin_sql = "passMD5='{$admin_pass_md5}', email='{$admin_email}', full_name='{$full_name}', about='{$about}', isBanned='0', isApproved='1', ";
+			$non_superadmin_sql = "passMD5=". ($password != '' ? "'" . md5($password) . "'" : "passMD5") .", email='{$admin_email}', full_name='{$full_name}', about='{$about}', isBanned='0', isApproved='1', ";
 		}
 
 		$upQry = "UPDATE `membership_users` set memberID='{$memberID}', {$non_superadmin_sql} comments='{$comments}' WHERE lcase(memberID)='{$oldMemberID}'";

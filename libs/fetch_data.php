@@ -460,7 +460,7 @@ function getblogridposts($table){
 		  $y =  substr($griditem['date'], 0, 4);
 		  $m = substr($griditem['date'],5, 2);
 		  $d  =substr($griditem['date'],8, 2);
-		 $content =  substr($griditem['content'],0,230) ;
+		 $content =  substr(strip_tags($griditem['content']),0,180) ;
 		$jalali =  gregorian_to_jalali($y,$m, $d,'/');
 
 			echo '<div class="col-md-6 blog-grid-top">
@@ -474,7 +474,7 @@ function getblogridposts($table){
 			</div>
 			<div class="card__body">
 				<div class="card__title text-right"><a  href="single.php?id='.$griditem['id'].'">'.$griditem['title'].'</a></div>
-				<div class="card__subtitle text-right">'.$content.'...</div>
+				<div class="text-right">'.$content.'...</div>
 				</div>
 			<div class="card__footer d-flex gap-3 p-3 align-items-center justify-content-start align-content-center">
 				<span class="d-flex gap-3"><i class="far fa-clock"></i>'.$griditem['time'].'دقیقه</span>
